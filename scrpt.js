@@ -19,7 +19,7 @@ document.getElementById('health-form').addEventListener('submit', async function
     
     try {
         // Send data to Flask backend
-        const response = await fetch('http://localhost:5000/predict', {
+        const response = await fetch('https://cardiobackend-1.onrender.com/predict', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -74,7 +74,7 @@ document.getElementById('health-form').addEventListener('submit', async function
         
     } catch (error) {
         console.error('Error:', error);
-        alert('There was an error processing your request. Please make sure the Flask server is running on http://localhost:5000');
+        alert('There was an error processing your request. Please make sure the backend server is running.');
     } finally {
         // Hide loading indicator
         document.getElementById('loading').style.display = 'none';
@@ -95,4 +95,5 @@ function fillSampleData() {
 }
 
 // Uncomment the line below to enable sample data filling for testing
+
 // fillSampleData();
