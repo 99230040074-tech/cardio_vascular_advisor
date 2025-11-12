@@ -43,7 +43,7 @@ document.getElementById('health-form').addEventListener('submit', async function
 
     try {
         // Send data to Flask backend
-        const response = await fetch('http://localhost:5000/predict', {
+        const response = await fetch('https://cardiobackend-1.onrender.com/predict', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(formData)
@@ -95,3 +95,4 @@ document.getElementById('health-form').addEventListener('submit', async function
         document.getElementById('submit-btn').disabled = false;
     }
 });
+
